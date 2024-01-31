@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streekrijschool | Admin</title>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user[1] }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Add User</h2>
+    <form action="/add_user" method="post">
+        <label for="username">Gebruikersnaam:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label for="password">Wachtwoord:</label>
+        <input type="password" name="password" required>
+        <br>
+        <label for="role">Rol:</label>
+        <select name="role" required>
+            <option value="admin">Admin</option>
+            <option value="leerling">Leerling</option>
+        </select>
+        <br>
+        <input type="submit" value="Gebruiker Toevoegen">
+    </form>
+</body>
+</html>
